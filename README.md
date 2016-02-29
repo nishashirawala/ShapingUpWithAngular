@@ -1,2 +1,2 @@
 # ShapingUpWithAngular
-Learning angular from CodeSchool course r 
+Learning angular from CodeSchool course
