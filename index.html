@@ -14,27 +14,28 @@
 	      
 	      <button ng-show="product.canPurchase">Add to Cart </button>
 
-	      <section>
+	      <section ng-controller="PanelController as panel">
 	      	<ul class="nav nav-pills">
-	      		<li> <a href ng-click="tab =1"> Description </a> </li>	
-	      		<li> <a href ng-click="tab = 2"> Specification </a> </li>	
-	      		<li> <a href ng-click="tab = 3"> Reviews </a> </li>	
+	      		<li ng-class="{active: panel.isSelected(1)}"> <a href ng-click="panel.selectTab(1)"> Description </a> </li>	
+	      		<li ng-class="{active: panel.isSelected(2)}"> <a href ng-click="panel.selectTab(2)"> Specification </a> </li>	
+	      		<li ng-class="{active: panel.isSelected(3)}"> <a href ng-click="panel.selectTab(3)"> Reviews </a> </li>	
 	      	</ul>
-	      </section>
+	      
 
-	      <div class="panel" ng-show="tab===1">
-	      	<h4>Description</h4>
-	      	<p> {{product.description}} </p>
-	      </div>
-	      <div class="panel" ng-show="tab===2">
-	      	<h4>Specification</h4>
-	      	<p> None </p>
-	      </div>
-	      <div class="panel" ng-show="tab===3">
-	      	<h4>Reviews</h4>
-	      	<p>None </p>
-	      </div>
-	    </li>
+		      <div class="panel" ng-show="panel.isSelected(1)">
+		      	<h4>Description</h4>
+		      	<p> {{product.description}} </p>
+		      </div>
+		      <div class="panel" ng-show="panel.isSelected(2)">
+		      	<h4>Specification</h4>
+		      	<blockquote> None </blockquote>
+		      </div>
+		      <div class="panel" ng-show="panel.isSelected(3)">
+		      	<h4>Reviews</h4>
+		      	<blockquote> None </blockquote>
+		      </div>
+		   </section>
+		</li>
   	</ul>
   </body>
 </html>
