@@ -11,6 +11,19 @@
 				{
 					full: 'images/gem-01.gif'
 				}
+			],
+			reviews : [
+				{
+					stars: 5,
+					body: "I love this product",
+					author: "joe@thomas.com"
+				},
+				{	
+					stars: 1,
+					body: "this product sucks",
+					author: "tim@harter.com"
+
+				}
 			]
 		},	
 		{
@@ -23,6 +36,19 @@
 				{
 					full: 'images/gem-02.gif'
 				}
+			],
+			reviews : [
+				{
+					stars: 3,
+					body: "good product",
+					author: "joe@thomas.com"
+				},
+				{	
+					stars: 1,
+					body: "bad one",
+					author: "tim@harter.com"
+
+				}
 			]
 		},
 	];
@@ -33,7 +59,7 @@
 
 	app.controller('PanelController', function() {
 		this.tab = 1;
-		
+
 		this.selectTab = function(setTab) {
 			this.tab = setTab;
 		};
