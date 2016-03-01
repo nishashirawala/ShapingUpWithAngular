@@ -37,7 +37,33 @@
 		      	 	{{review.body}}
 		      	 	<cite> by {{review.author}} </cite> 
 		      	</blockquote>
-		      </div>
+
+		      	<form name="reviewForm">
+		      		<!-- live review panel : start -->
+		      		<blockquote>
+			      	 	<b>Stars : {{review.stars}} </b>
+			      	 	{{review.body}}
+			      	 	<cite> - {{review.author}} </cite> 
+		      		</blockquote>
+		      		<!-- live review panel : end -->
+
+			      	<h4> Submit a Review </h4>
+			      	<select ng-model="review.stars">
+			      		<option value="1">1 star</option>
+			      		<option value="2">2 stars</option>
+			      		<option value="3">3 stars</option>
+			      		<option value="4">4 stars</option>
+			      		<option value="5">5 stars</option>
+			      	</select>
+			      	<br/><br/>
+			      	<textarea ng-model="review.body"></textarea>
+			      	<br/><br/>
+			      	<label> by : </label>
+			      	<input ng-model="review.author" type="email" />
+			      	<br/><br/>
+			   	   	<input type="submit" value="submit" />
+			   	  </form>
+			   </div>
 		   </section>
 		</li>
   	</ul>
