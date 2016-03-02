@@ -4,6 +4,17 @@
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"> </script>
+
+    <style>
+
+    	.ng-invalid.ng-dirty {
+    		border-color : #FA787E;
+    	}
+
+    	.ng-valid.ng-dirty{
+    		border-color : #78FA89;
+    	}
+	</style>
   </head>
   <body ng-controller="StoreController as storeCtrl">
   	<ul class="list-group">
@@ -38,7 +49,7 @@
 		      	 	<cite> by {{review.author}} </cite> 
 		      	</blockquote>
 
-		      	<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+		      	<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 		      		<!-- live review panel : start -->
 		      		<blockquote>
 			      	 	<b>Stars : {{reviewCtrl.review.stars}} </b>
@@ -48,7 +59,7 @@
 		      		<!-- live review panel : end -->
 
 			      	<h4> Submit a Review </h4>
-			      	<select ng-model="reviewCtrl.review.stars">
+			      	<select ng-model="reviewCtrl.review.stars" required>
 			      		<option value="1">1 star</option>
 			      		<option value="2">2 stars</option>
 			      		<option value="3">3 stars</option>
@@ -56,10 +67,10 @@
 			      		<option value="5">5 stars</option>
 			      	</select>
 			      	<br/><br/>
-			      	<textarea ng-model="reviewCtrl.review.body"></textarea>
+			      	<textarea ng-model="reviewCtrl.review.body" required></textarea>
 			      	<br/><br/>
 			      	<label> by : </label>
-			      	<input ng-model="reviewCtrl.review.author" type="email" />
+			      	<input ng-model="reviewCtrl.review.author" type="email" required />
 			      	<br/><br/>
 			   	   	<input type="submit" value="submit" />
 			   	  </form>
