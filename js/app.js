@@ -77,5 +77,12 @@
 			this.review = {};
 		}
 	});
+
+	app.directive('productTitle', function(){
+		return {
+			restrict: 'E', // E stands for element, so we are using product-title as element in html. If we use it as attribute than it will be 'A'
+			templateUrl : 'product-title.html'
+		};
+	});
 	
 })();

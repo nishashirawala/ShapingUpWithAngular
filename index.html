@@ -19,9 +19,9 @@
   <body ng-controller="StoreController as storeCtrl">
   	<ul class="list-group">
   		<li class = "list-group-item" ng-repeat = "product in storeCtrl.products" ng-hide="product.soldOut">
-	      <h3 ng-include="'product-title.html'"> 
-
-	  	  </h3>
+  			<h3>
+	  	  		<product-title></product-title>
+	  	  	</h3>
 	      <img ng-src="{{product.images[0].full}}" />
 	      
 	      <button ng-show="product.canPurchase">Add to Cart </button>
