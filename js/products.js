@@ -25,5 +25,12 @@
 			controllerAs: 'panelCtrl'
 		};
 	});
+
+	app.directive('productImages', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'product-images.html'
+		};
+	});
 }) ();
 
