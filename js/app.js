@@ -57,7 +57,7 @@
 		this.products = gems;
 	});
 
-	
+	/* Moved this logic to custom controller function - productPanels*/
 	/*app.controller('PanelController', function() {
 		this.tab = 1;
 
