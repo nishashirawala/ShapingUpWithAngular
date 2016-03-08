@@ -1,61 +1,15 @@
 (function() {
 	var app = angular.module('gemStore', ['store-products']);
-	var gems = [
-		{
-			name: 'Dodecahedron',
-			price: 2,
-			description: 'Some gems have hidden qualities beyond their luster, beyond their shine... Dodeca is one of those gems',
-			canPurchase : true,
-			soldOut : false,
-			images:[
-				{
-					full: 'images/gem-01.gif'
-				}
-			],
-			reviews : [
-				{
-					stars: 5,
-					body: "I love this product",
-					author: "joe@thomas.com"
-				},
-				{	
-					stars: 1,
-					body: "this product sucks",
-					author: "tim@harter.com"
-
-				}
-			]
-		},	
-		{
-			name: 'Pentagonal Gem',
-			price: 5.95,
-			description: 'Origin of the Pentagonal Gem is unknown, hence its low value. It has very high shine and 12 sides',
-			canPurchase : false,
-			soldOut : false,
-			images:[
-				{
-					full: 'images/gem-02.gif'
-				}
-			],
-			reviews : [
-				{
-					stars: 3,
-					body: "good product",
-					author: "joe@thomas.com"
-				},
-				{	
-					stars: 1,
-					body: "bad one",
-					author: "tim@harter.com"
-
-				}
-			]
-		},
-	];
+	
 	// Angular controllers - where we define our app's behaviour by defining functions.
-	app.controller('StoreController', function() {
-		this.products = gems;
-	});
+	app.controller('StoreController', [ '$http', function($http) {
+		var store = this;
+		store.products = [];
+		$http.get('./products.json').success(function(data){
+			store.products = data;
+		});
+		
+	}]);
 
 	app.controller('ReviewController', function(){
 		this.review = {};
