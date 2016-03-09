@@ -66,6 +66,18 @@
         "full": "images/gem-03.gif"
       }
     ],
-    "reviews": []
+    "reviews":  [
+      {
+        "stars": 3,
+        "body": "good product",
+        "author": "joe@thomas.com"
+      },
+      { 
+        "stars": 1,
+        "body": "bad one",
+        "author": "tim@harter.com"
+
+      }
+    ]
   }
 ]
